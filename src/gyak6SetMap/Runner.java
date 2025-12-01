@@ -77,20 +77,21 @@ public class Runner {
 
         HashMap<Building, ArrayList<Room>> buildingMap = new HashMap<>();
 
-        for(Room r : rooms){
+        for (Room r : rooms){
             ArrayList<Room> al;
-            if (buildingMap.containsKey(r.getBuilding())) al = buildingMap.get(r.getBuilding());
+            if (!buildingMap.containsKey(r.getBuilding())) al = new ArrayList<>();
             else
-                al = new ArrayList<>();
+                al = buildingMap.get(r.getBuilding());
             al.add(r);
-            buildingMap.put(r.getBuilding(), al);
+            buildingMap.put(r.getBuilding(),al);
         }
-        for (Map.Entry<Building, ArrayList<Room>> entry : buildingMap.entrySet()) {
-            Building k = entry.getKey();
-            ArrayList<Room> val = entry.getValue();
 
-            System.out.println(k);
-            System.out.println(val);
+        for (Map.Entry<Building, ArrayList<Room>> entry : buildingMap.entrySet()){
+            Building b = entry.getKey();
+            ArrayList<Room> r = entry.getValue();
+
+            System.out.println(b);
+            System.out.println(r);
         }
 
     }
