@@ -11,7 +11,7 @@ public class ConsoleGyak {
         System.out.println(c.toString());
         System.out.println(c);
         c.printf("Helóka! %1$s\n", input);
-        c.format("Helóka! %1$s\n", input);
+        c.format("Helóka! %s\n", input);
         c.flush();
 
     }
